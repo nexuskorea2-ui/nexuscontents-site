@@ -257,19 +257,90 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 @media(min-width:52rem){.guide{grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr)}}
 
 .guide-entry{display:flex;align-items:center;gap:1.2rem;padding:clamp(1.25rem,3vw,2rem);margin-top:3rem;border:1px solid var(--line);border-radius:8px;background:linear-gradient(120deg,var(--surface),var(--accent-2));text-decoration:none;color:var(--accent);transition:transform .25s,box-shadow .25s}.guide-entry:hover{transform:translateY(-3px);box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 12%,transparent)}.guide-entry__emoji{font-size:2.5rem;line-height:1.3}.guide-entry__copy{display:grid;gap:.4rem;min-width:0;flex:1}.guide-entry strong{font-size:1.2rem;font-weight:500}.guide-entry__copy>span{font-size:.85rem;color:var(--ink-soft)}
+/* Art direction: architecture, objects, and creator tools. */
+.hero{padding-bottom:7rem}.hero__art{background-image:url("clinic.png");background-position:64% 50%;cursor:zoom-in;transition:box-shadow .5s}
+.hero__art:after{background:var(--ground);border:1px solid var(--accent);width:4rem;height:4rem;animation:none;box-shadow:0 0 0 8px color-mix(in srgb,var(--ground) 70%,transparent)}
+.hero__art:hover{box-shadow:0 30px 90px color-mix(in srgb,var(--accent) 22%,transparent)}
+.art-ribbon{max-width:var(--max);margin:0 auto 3rem;padding:0 var(--pad);display:flex;align-items:center;gap:1.5rem;overflow:hidden;color:var(--accent);font-size:clamp(2.5rem,8vw,6.5rem);font-weight:200;letter-spacing:.14em;line-height:1.3;opacity:.7}
+.art-ribbon:before,.art-ribbon:after{content:"";height:1px;background:var(--line-2);flex:1}.art-ribbon i{font-style:normal;font-size:.4em;font-weight:200}
+.pan{padding-top:1.3rem;transform-style:preserve-3d;transition:transform .35s ease,box-shadow .4s;--px:50%;--py:50%}
+.pan:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--px) var(--py),color-mix(in srgb,var(--surface) 18%,transparent),transparent 48%);opacity:0;transition:opacity .4s;z-index:2}.pan:hover:after{opacity:1}
+.visual-photo{display:block;padding:0;border:0;position:relative;width:100%;overflow:hidden;cursor:zoom-in;background:var(--surface-alt);color:var(--ink);border-radius:3px;isolation:isolate;font:inherit}
+.visual-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.visual-photo:hover img,.visual-photo:focus-visible img{transform:scale(1.045)}
+.visual-photo>span{position:absolute;right:1rem;bottom:1rem;display:grid;place-items:center;width:2.5rem;height:2.5rem;background:var(--ground);color:var(--accent);border-radius:50%;box-shadow:0 2px 15px color-mix(in srgb,var(--ink) 10%,transparent);font-size:1.3rem;transition:transform .3s}
+.visual-photo:hover>span{transform:rotate(90deg)}
+.pan .visual-photo{aspect-ratio:16/10;margin-bottom:.9rem}.pan .lbl{letter-spacing:.2em}.pan__go{position:relative;z-index:3}
+.flow{position:relative;gap:1rem}.node{cursor:pointer;outline-offset:4px}.node[data-active="true"]{border-color:var(--accent);background:linear-gradient(140deg,var(--surface),var(--accent-2));box-shadow:inset 0 3px var(--accent)}.node[data-active="true"] .node__n{color:var(--accent)}
+.node__n{transition:transform .4s;display:inline-block}.node:hover .node__n{transform:translateX(5px)}
+.process-visual{margin-top:2rem;display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);border:1px solid var(--line);background:var(--surface);border-radius:4px;overflow:hidden}
+.process-visual .visual-photo{aspect-ratio:16/9;border-radius:0}.process-caption{padding:clamp(1.25rem,3vw,2.5rem);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0;gap:.8rem}
+.process-caption .step-number{font-size:clamp(3rem,6vw,5rem);line-height:1;color:var(--accent);font-family:var(--f-d)}.process-caption h3{font-size:1.3rem;font-weight:400;line-height:1.5}.process-caption p{font-size:.8rem;color:var(--muted);margin:0}
+.scope-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:start}.scope-layout>.visual-photo{aspect-ratio:4/5;max-height:38rem}.scope-layout .does{grid-template-columns:minmax(0,1fr)}
+@media(min-width:60rem){.scope-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:3rem}.scope-layout>.visual-photo{position:sticky;top:8rem}.scope-layout .does{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.8rem}.scope-layout .do{padding-left:2rem}}
+.band{position:relative}.band:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,var(--deep),color-mix(in srgb,var(--deep) 88%,transparent)),url("filming.png");background-size:cover;background-position:center;opacity:.8}.band section{z-index:1}.band:after{width:26rem;height:26rem}
+.cts a{border-radius:4px}.cts a:after{transition:transform .35s}.cts a:hover:after{transform:translate(3px,-3px)}
+.guide-entry{position:relative;overflow:hidden;padding-block:2.1rem}.guide-entry:before{content:"";position:absolute;inset:0 0 0 60%;background:linear-gradient(90deg,var(--accent-2),transparent),url("filming.png") center/cover;opacity:.18;pointer-events:none}.guide-entry>*{position:relative;z-index:1}.guide-entry__emoji{transition:transform .4s}.guide-entry:hover .guide-entry__emoji{transform:rotate(-10deg) scale(1.12)}
+.scroll-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+.mast nav a[aria-current="location"]{color:var(--accent);border-bottom-color:var(--accent)}
+.motion-control{display:flex;align-items:center;gap:.3rem;background:none;border:1px solid var(--line);border-radius:30px;padding:.35rem .55rem;color:var(--muted);font:inherit;font-size:.65rem;cursor:pointer;line-height:1.4}
+.art-dialog{border:1px solid var(--line);padding:1rem;background:var(--ground);color:var(--ink);max-width:min(94vw,75rem);width:max-content;max-height:92dvh;border-radius:6px}.art-dialog::backdrop{background:color-mix(in srgb,var(--deep) 80%,transparent);backdrop-filter:blur(8px)}.art-dialog img{display:block;max-width:100%;width:auto;max-height:75dvh;object-fit:contain}.art-dialog form{display:flex;justify-content:flex-end;margin-bottom:.7rem}.art-dialog button{border:1px solid var(--line-2);border-radius:30px;padding:.5rem 1rem;background:var(--surface);color:var(--ink);font:inherit;font-size:.8rem;cursor:pointer}.art-dialog p{font-size:.7rem;color:var(--muted);margin:.6rem 0 0}
+@media(max-width:51.99rem){.process-visual{grid-template-columns:minmax(0,1fr)}.process-caption{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:1rem}.process-caption .step-number{grid-row:1/3}.process-caption p{grid-column:2}.scope-layout>.visual-photo{aspect-ratio:16/9;max-height:none}.hero{padding-bottom:4rem}.art-ribbon{margin-bottom:2rem}.motion-control{font-size:.6rem}.mast__r{gap:.55rem}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){html:not([data-motion="off"]) .pan:hover{transform:perspective(1200px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-4px)}}
+html[data-motion="off"]{scroll-behavior:auto}html[data-motion="off"] *,html[data-motion="off"] *:before,html[data-motion="off"] *:after{animation:none!important;transition:none!important}html[data-motion="off"] .pan:hover,html[data-motion="off"] .visual-photo:hover img{transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.pan:hover,.visual-photo:hover img{transform:none!important}}
+
+/* Touch-first mobile layout; desktop art direction stays intact. */
+.mobile-actions{display:none}
+@media(max-width:43.99rem){
+ html{scroll-padding-top:8rem}
+ body{padding-bottom:calc(5.25rem + env(safe-area-inset-bottom,0px))}
+ .mast__in{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:.35rem .6rem;padding-block:.65rem .3rem}
+ .mark{grid-column:1;grid-row:1;min-width:0}.mark b{font-size:1.12rem;white-space:nowrap}.mark i{display:none}
+ .mast__r{display:contents}.mast nav{grid-column:1/-1;grid-row:2;display:flex;justify-content:space-between;gap:.4rem;width:100%;font-size:.72rem}
+ .mast nav a{display:flex;align-items:center;justify-content:center;min-height:44px;line-height:1.5;text-align:center;padding:.5rem .15rem}
+ .langs{grid-column:3;grid-row:1;padding:2px;gap:0}.langs button{min-width:34px;min-height:40px;padding:.3rem .35rem;font-size:.63rem}
+ .motion-control{grid-column:2;grid-row:1;min-height:44px;padding:.4rem .55rem;font-size:.62rem;white-space:nowrap}
+ .hero{padding-top:2.3rem;padding-bottom:2.5rem}.hero__in{gap:1.8rem}.hero h1,html[lang="en"] .hero h1{font-size:clamp(2.05rem,8.8vw,2.7rem);line-height:1.35;margin-block:1.25rem 1.4rem}.hero__lead{font-size:.91rem;line-height:1.9;max-width:none}
+ .hero__art{aspect-ratio:4/3;min-height:0;width:100%;background-position:62% 50%;border-radius:5rem .3rem 3rem .3rem;box-shadow:0 14px 35px color-mix(in srgb,var(--accent) 12%,transparent)}.hero__art:before{inset:.55rem}.hero__art:after{display:none}
+ .art-ribbon{font-size:2.4rem;gap:.7rem;letter-spacing:.12em;margin-bottom:1.7rem}.dip{gap:1.25rem}.pan{padding:1rem 1.25rem 1.5rem;border-radius:.6rem}.pan .visual-photo{aspect-ratio:4/3;margin-bottom:.5rem}.pan h3{font-size:1.5rem;line-height:1.5}.pan p,.pan ul{font-size:.9rem;line-height:1.85}.pan__go{min-height:48px;display:flex;align-items:center;justify-content:center;width:100%;padding:.8rem 1rem;text-align:center}
+ section{padding-block:3.1rem}.head h2{font-size:1.95rem;line-height:1.45}.head p:not(.lbl){font-size:.9rem}.head{margin-bottom:1.7rem}
+ .flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.node,.node+.node{padding:1rem .85rem;min-height:48px}.node__n{font-size:2.8rem;margin-bottom:1.2rem}.node h3{font-size:.95rem;line-height:1.55}.node p{font-size:.81rem;line-height:1.8}
+ .process-visual{margin-top:1.2rem}.process-visual .visual-photo{aspect-ratio:4/3}.process-caption{padding:1.15rem}.process-caption h3{font-size:1.08rem}.process-caption p{font-size:.76rem}.process-caption .step-number{font-size:2.75rem}
+ .scope-layout{gap:1.2rem}.scope-layout>.visual-photo{aspect-ratio:4/3;border-radius:.6rem}.scope-layout .does{grid-template-columns:minmax(0,1fr)}.do{padding-block:1.15rem}.do p{font-size:.89rem}
+ .tg{gap:1rem}.tg>div{padding:1.2rem}.tg li{font-size:.89rem;line-height:1.8}.pr{padding:1rem;font-size:.81rem}.band .head h2{max-width:none}
+ .guide-entry{padding:1.3rem 1rem;gap:.8rem;border-radius:.6rem;margin-top:1.8rem;min-height:88px}.guide-entry__emoji{font-size:2rem}.guide-entry strong{font-size:1.1rem}.guide-entry__copy>span{font-size:.8rem}
+ .cts{gap:.8rem;margin-top:1.8rem}.cts a,.cts a:first-child,.cts a+a{padding:1.2rem;min-height:88px}.rec dd{overflow-wrap:anywhere;font-size:.91rem}.rec dt{min-width:0}
+ .visual-photo>span{width:44px;height:44px;right:.65rem;bottom:.65rem}
+ .mobile-actions{position:fixed;z-index:30;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;gap:.65rem;padding:.65rem var(--pad) calc(.65rem + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:color-mix(in srgb,var(--ground) 95%,transparent);backdrop-filter:blur(15px)}
+ .mobile-actions a{min-width:0;min-height:48px;border:1px solid var(--accent);border-radius:28px;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.55rem .7rem;font-size:.82rem;font-weight:500;text-decoration:none;color:var(--accent);line-height:1.5;text-align:center}.mobile-actions a:last-child{background:var(--accent);color:var(--ground)}
+ .art-dialog{padding:.7rem;width:calc(100vw - 1.25rem);max-width:calc(100vw - 1.25rem);max-height:90dvh}.art-dialog button{min-height:44px;min-width:72px}.art-dialog img{max-height:70dvh;width:100%}
+ footer{padding-block:1.5rem;font-size:.67rem}
+}
+@media(hover:none){.pan:hover,.node:hover,.cts a:hover{transform:none;box-shadow:none}.visual-photo:hover img,.visual-photo:hover>span,.guide-entry:hover .guide-entry__emoji{transform:none}.pan:after{display:none}}
+
+
+/* Requested Korean brand lockup; keep JA/EN labels unchanged. */
+html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lang="ko"] .mark b{font-family:var(--f-b);font-weight:600;letter-spacing:.13em}html[lang="ko"] .mark i{display:inline;font-size:.72rem;letter-spacing:.04em;font-weight:400;color:var(--muted)}
+@media(max-width:43.99rem){html[lang="ko"] .mark b{font-size:1rem;letter-spacing:.08em}html[lang="ko"] .mark i{font-size:.61rem;letter-spacing:0}html[lang="ko"] .mark{gap:.3rem}}
+@media(max-width:22.49rem){.motion-control span{display:none}.motion-control{min-width:36px;justify-content:center}.mast__in{column-gap:.35rem}}
+
+.brand-story{display:grid;grid-template-columns:5rem minmax(0,1fr);gap:1.5rem;padding:2rem;margin-bottom:2rem;background:linear-gradient(120deg,var(--surface),var(--accent-2));border:1px solid var(--line);border-radius:6px}.brand-story__symbol{font-size:4rem;color:var(--accent);line-height:1.1;align-self:center}.brand-story h3{font-size:1.3rem;line-height:1.5;font-weight:400}.brand-story p{font-size:.94rem;line-height:1.95;color:var(--ink-soft);margin:.8rem 0 0}@media(max-width:43.99rem){.brand-story{grid-template-columns:minmax(0,1fr);padding:1.4rem;gap:.7rem}.brand-story__symbol{font-size:3rem}.brand-story p{font-size:.9rem}}
 </style>
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <header class="mast">
   <div class="wrap mast__in">
-    <a class="mark" href="#top"><b data-ja="ネクサス" data-en="NEXUS">넥수스</b><i>NEXUS</i></a>
+    <a class="mark" href="#top"><b data-ja="ネクサス" data-en="NEXUS">NEXUS</b><i data-ja="NEXUS" data-en="NEXUS">넥수스</i></a>
     <div class="mast__r">
       <nav>
         <a href="#clinic" data-ja="クリニック・ブランド" data-en="For Clinics">클리닉·브랜드</a>
         <a href="#creator" data-ja="クリエイター" data-en="For Creators">크리에이터</a>
         <a href="#company" data-ja="会社情報" data-en="Company">회사 정보</a>
       </nav>
+      <button class="motion-control" id="motion-toggle" type="button" aria-pressed="true">◉ <span>효과 끄기</span></button>
       <div class="langs" role="group" aria-label="Language">
         <button type="button" data-lang="ko">KO</button>
         <button type="button" data-lang="ja">JA</button>
@@ -291,12 +362,13 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 
 Creators film in their own style, while we handle the introductions and connections.">넥수스는 서울의 피부과·에스테틱·메이크업숍과 한국을 찾는 일본 크리에이터를 연결합니다. 촬영은 크리에이터가 자신의 방식대로, 소개와 연결은 저희가 맡습니다.</p>
       </div>
-      <div class="hero__art" role="img" aria-label="도자기빛 배경 위에 놓인 스킨케어 용기와 마른 꽃잎"></div>
+      <div class="hero__art" role="button" tabindex="0" data-zoom="clinic.png" aria-label="Zoom image"></div>
     </div>
   </div>
 
+  <div class="art-ribbon" aria-hidden="true">NEXUS <i>✳</i></div>
   <div class="dip">
-    <div class="pan pan--l" id="clinic">
+    <div class="pan pan--l" id="clinic"><button type="button" class="visual-photo" data-zoom="clinic.png" aria-label="Zoom image"><img src="clinic.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>
       <p class="lbl">For Clinics &amp; Brands</p>
       <h3 data-ja="日本のお客様へ届く経路" data-en="A route to English-speaking customers">일본 고객에게 닿는 경로</h3>
       <p data-ja="広告ではなく、実際に訪れた人のレビューで知られていく方法です。" data-en="Become known in Japan and worldwide through reviews from people who actually visited.">광고가 아니라, 실제로 방문한 사람의 후기로 알려지는 방식입니다.</p>
@@ -307,7 +379,7 @@ Creators film in their own style, while we handle the introductions and connecti
       </ul>
       <a class="pan__go" href="#company" data-ja="お問い合わせ先を見る →" data-en="See contact details →">문의처 보기 &rarr;</a>
     </div>
-    <div class="pan pan--r" id="creator">
+    <div class="pan pan--r" id="creator"><button type="button" class="visual-photo" data-zoom="filming.png" aria-label="Zoom image"><img src="filming.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>
       <p class="lbl">For Creators</p>
       <h3 data-ja="渡韓美容の案件をご紹介します" data-en="Beauty treatments and experiences in South Korea.">渡韓 뷰티 안건을 소개합니다</h3>
       <p data-ja="ソウルの美容皮膚科・スパ・メイクショップの案件情報をお届けします。" data-en="Visit dermatology clinics, spas, and makeup studios in Seoul.">서울의 피부과·스파·메이크업숍 안건 정보를 전해드립니다.</p>
@@ -347,6 +419,7 @@ For any urgent needs, feel free to contact us.">크리에이터가 직접 방문
 We will verify the PR label and collaboration settings.">시술 후 2주 이내에 릴스와 스토리로 투고하고, PR 표기와 공동게시물 설정을 확인합니다.</p></div>
     </div>
 
+    <div class="process-visual" id="process-visual"><button type="button" class="visual-photo" data-zoom="planning.png" aria-label="Zoom image"><img id="stage-photo" src="planning.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button><div class="process-caption"><span class="step-number" id="stage-number" aria-hidden="true">01</span><h3 id="stage-title" aria-live="polite"></h3><p data-ja="上のステップを選んでご覧ください。" data-en="Select a step above to explore.">위의 진행 단계를 선택해 보세요.</p></div></div>
     <!-- Guide video navigation -->
     <a class="guide-entry" id="guide" href="guide.html">
       <span class="guide-entry__emoji" aria-hidden="true">🎬</span>
@@ -361,7 +434,7 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
       <h2 data-ja="ネクサスが担う範囲" data-en="What NEXUS handles">넥수스가 맡는 범위</h2>
       <p data-ja="案件の整理から結果のご報告まで、ご紹介と橋渡しに必要な工程を担います。" data-en="From defining the brief to reporting results — the work of introducing and matching.">안건 정리부터 결과 보고까지, 소개와 연결에 필요한 일을 맡습니다.</p>
     </div>
-    <div class="does">
+    <div class="scope-layout"><button type="button" class="visual-photo" data-zoom="planning.png" aria-label="Zoom image"><img src="planning.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>    <div class="does">
       <div class="do">
         <h3 data-ja="案件条件の整理" data-en="Defining the brief">안건 조건 정리</h3>
         <p data-ja="施術内容・期間・提供条件を確定し、日本語の案内文にまとめます。" data-en="Treatment, dates and what's provided — settled and written up in English.">시술 내용·기간·제공 조건을 확정하고 일본어 안내문으로 정리합니다.</p>
@@ -382,6 +455,7 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
         <h3 data-ja="結果のご報告" data-en="Reporting back">결과 보고</h3>
         <p data-ja="投稿状況と反応を整理してお伝えします。" data-en="Posts and their reception, collected and sent to you.">투고 현황과 반응을 정리해 전달합니다.</p>
       </div>
+    </div>
     </div>
     <p class="note" data-ja="コンテンツの撮影と編集はクリエイターご本人が行います。弊社はレビュー内容に介入いたしません。これは方針であると同時に、ステルスマーケティング規制上の要件でもあります。" data-en="Filming and editing stay with the creator, and we take no part in the content of a review — our policy, and what disclosure rules require.">촬영과 편집은 크리에이터 본인이 진행하며, 저희는 후기 내용에 개입하지 않습니다. 방침이자 스텔스마케팅 규제 요건입니다.</p>
   </section>
@@ -423,6 +497,11 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
       <p class="lbl">Company</p>
       <h2 data-ja="ネクサスについて" data-en="About NEXUS">넥수스에 대하여</h2>
     </div>
+    <div class="brand-story">
+      <span class="brand-story__symbol" aria-hidden="true">∞</span>
+      <div><h3 data-ja="名前に込めた、つながりへの想い" data-en="The connection behind our name">이름에 담은 연결의 의미</h3>
+      <p data-ja="ネクサス（NEXUS）は、ラテン語で「つながり・結びつき」を意味します。私たちは、ソウルの美容クリニックやサロンと、韓国を訪れるクリエイターをつなぎ、それぞれに合った出会いをご紹介します。言葉や文化の違いを橋渡しし、訪問や体験が率直なコンテンツにつながるよう、ご紹介とコミュニケーションをサポートします。" data-en="NEXUS is Latin for a connection or bond. We connect beauty clinics and studios in Seoul with creators visiting Korea, introducing partners whose needs and interests align. By bridging languages and cultures, we support the introductions and communication that help visits and experiences become authentic content.">넥수스(NEXUS)는 라틴어로 ‘연결·결합’을 뜻합니다. 우리는 서울의 뷰티 공간과 한국을 찾는 크리에이터 사이에서, 서로에게 맞는 만남을 연결합니다. 서로 다른 언어와 문화 사이를 잇고, 방문과 체험이 진솔한 콘텐츠로 이어지도록 소개와 소통을 돕습니다.</p></div>
+    </div>
     <div class="rec">
       <dl>
         <dt data-ja="商号" data-en="Name">상호</dt><dd data-ja="ネクサス (NEXUS)" data-en="NEXUS">넥수스 (NEXUS)</dd>
@@ -444,6 +523,8 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
   <span>&copy; 2026</span>
 </footer>
 
+<nav class="mobile-actions" aria-label="Quick links"><a class="mobile-guide" href="guide.html"><span aria-hidden="true">🎬</span><span data-ja="動画ガイド" data-en="Video guide">가이드 영상</span></a><a href="#company"><span data-ja="お問い合わせ" data-en="Contact">문의하기</span><span aria-hidden="true">↗</span></a></nav>
+<dialog class="art-dialog" id="art-dialog" aria-label="Image preview"><form method="dialog"><button data-ja="閉じる ✕" data-en="Close ✕">닫기 ✕</button></form><img id="art-expanded" alt=""><p data-ja="ブランドのイメージを表現したAI生成画像です。" data-en="AI-generated imagery illustrating the brand concept.">브랜드의 분위기를 표현한 AI 제작 이미지입니다.</p></dialog>
 <script>
 (function () {
   var KO = new Map();
@@ -460,6 +541,7 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
   function apply(lang) {
     document.documentElement.lang = lang;
     document.getElementById("guide").href = "guide.html?v=video2&lang=" + lang;
+    document.querySelector(".mobile-guide").href = "guide.html?lang=" + lang;
     KO.forEach(function (koText, el) {
       var v = lang === "ko" ? koText : el.getAttribute("data-" + lang);
       el.textContent = v || koText;
@@ -502,5 +584,30 @@ We will verify the PR label and collaboration settings.">시술 후 2주 이내�
 })();
 </script>
 
+<script>
+(function(){
+'use strict';
+var root=document.documentElement, reduced=window.matchMedia('(prefers-reduced-motion: reduce)'), fine=window.matchMedia('(hover:hover) and (pointer:fine)'), enabled=!reduced.matches;
+var running=new Set(),toggle=document.getElementById('motion-toggle'),toggleText=toggle.querySelector('span');
+function active(){return enabled&&!reduced.matches;}
+function animate(el,frames,options){if(!active()||!el.animate)return;var animation=el.animate(frames,options);running.add(animation);animation.onfinish=animation.oncancel=function(){running.delete(animation);};}
+function updateMotion(){root.dataset.motion=active()?'on':'off';toggle.setAttribute('aria-pressed',String(active()));var lang=root.lang;toggleText.textContent=(lang==='ja'?['動きをオン','動きをオフ']:lang==='en'?['Motion on','Motion off']:['효과 켜기','효과 끄기'])[active()?1:0];if(!active()){running.forEach(function(a){a.cancel();});running.clear();}}
+toggle.addEventListener('click',function(){enabled=!active();updateMotion();});reduced.addEventListener('change',function(){enabled=!reduced.matches;updateMotion();});updateMotion();
+var dialog=document.getElementById('art-dialog'),dialogImage=document.getElementById('art-expanded');
+document.querySelectorAll('[data-zoom]').forEach(function(button){function open(){dialogImage.src=button.dataset.zoom;dialog.showModal();}button.addEventListener('click',open);if(button.tagName!=='BUTTON')button.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
+dialog.addEventListener('click',function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+var nodes=Array.from(document.querySelectorAll('.node')),selected=0,stage=document.getElementById('stage-photo'),stageButton=stage.parentElement,stageTitle=document.getElementById('stage-title'),stageNumber=document.getElementById('stage-number');
+var photos=['planning.png','filming.png','clinic.png','planning.png'];
+function choose(i,user){selected=i;nodes.forEach(function(n,j){n.dataset.active=String(i===j);n.setAttribute('aria-pressed',String(i===j));});stage.src=photos[i];stageButton.dataset.zoom=photos[i];stageTitle.textContent=nodes[i].querySelector('h3').textContent;stageNumber.textContent=nodes[i].querySelector('.node__n').textContent;if(user)animate(stage,[{opacity:.4,transform:'scale(1.035)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'ease-out'});}
+nodes.forEach(function(n,i){n.setAttribute('role','button');n.tabIndex=0;n.setAttribute('aria-controls','process-visual');n.addEventListener('click',function(){choose(i,true);});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i,true);}else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var next=(i+(e.key==='ArrowRight'?1:-1)+nodes.length)%nodes.length;nodes[next].focus();choose(next,true);}});});choose(0,false);
+new MutationObserver(function(){choose(selected,false);updateMotion();}).observe(root,{attributes:true,attributeFilter:['lang']});
+document.querySelectorAll('.pan').forEach(function(card){var raf=0;card.addEventListener('pointermove',function(e){if(!active()||!fine.matches)return;var r=card.getBoundingClientRect(),x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),y=Math.max(0,Math.min(1,(e.clientY-r.top)/r.height));cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){card.style.setProperty('--px',x*100+'%');card.style.setProperty('--py',y*100+'%');card.style.setProperty('--tilt-x',(0.5-y)*2+'deg');card.style.setProperty('--tilt-y',(x-0.5)*2+'deg');});});card.addEventListener('pointerleave',function(){cancelAnimationFrame(raf);card.style.setProperty('--tilt-x','0deg');card.style.setProperty('--tilt-y','0deg');});});
+if('IntersectionObserver' in window){var reveal=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;animate(entry.target,[{opacity:.25,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:700,delay:Number(entry.target.dataset.revealDelay||0),easing:'cubic-bezier(.2,.7,.2,1)'});reveal.unobserve(entry.target);});},{threshold:.08});document.querySelectorAll('.head,.pan,.node,.scope-layout,.process-visual,.tg>div,.cts a,.guide-entry').forEach(function(el,i){if(el.classList.contains('node'))el.dataset.revealDelay=(nodes.indexOf(el)*80);reveal.observe(el);});}
+var progress=document.querySelector('.scroll-progress'),pending=false;
+function scrollUpdate(){pending=false;var height=root.scrollHeight-innerHeight,ratio=height>0?Math.max(0,Math.min(1,scrollY/height)):0;progress.style.transform='scaleX('+ratio+')';var current='';['clinic','creator','company'].forEach(function(id){if(document.getElementById(id).getBoundingClientRect().top<180)current=id;});document.querySelectorAll('.mast nav a').forEach(function(a){if(a.hash==='#'+current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+addEventListener('scroll',function(){if(!pending){pending=true;requestAnimationFrame(scrollUpdate);}},{passive:true});addEventListener('resize',scrollUpdate);scrollUpdate();
+})();
+
+</script>
 </body>
 </html>

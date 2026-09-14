@@ -258,13 +258,21 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 
 .guide-page{padding-block:3rem}.guide-page .guide{grid-template-columns:minmax(0,1fr);margin-top:1.5rem}.guide-page .guide__screen{width:100%;max-width:60rem;justify-self:center}.guide-page h1{font-size:clamp(2rem,4vw,3rem);font-weight:400}.guide-page .guide__intro{gap:.75rem}
 .guide-help{font-size:.85rem;color:var(--ink-soft);line-height:1.8}.guide-page #guide-link{padding:.75rem 1.25rem;background:var(--accent);color:var(--ground);border-radius:30px;text-decoration:none}
+
+@media(max-width:43.99rem){.guide-page{padding-block:1.5rem}.guide-page .guide{padding:1rem;gap:1.2rem}.guide-page #guide-link{min-height:48px;display:flex;align-items:center}.guide-page>.guide__link{display:inline-flex;align-items:center;min-height:44px}.guide__screen{aspect-ratio:4/3}.guide-help{font-size:.85rem}.langs button{min-height:40px;min-width:36px}.mast nav a{display:inline-flex;align-items:center;min-height:44px}}
+
+/* Requested Korean brand lockup; keep JA/EN labels unchanged. */
+html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lang="ko"] .mark b{font-family:var(--f-b);font-weight:600;letter-spacing:.13em}html[lang="ko"] .mark i{display:inline;font-size:.72rem;letter-spacing:.04em;font-weight:400;color:var(--muted)}
+@media(max-width:43.99rem){html[lang="ko"] .mark b{font-size:1rem;letter-spacing:.08em}html[lang="ko"] .mark i{font-size:.61rem;letter-spacing:0}html[lang="ko"] .mark{gap:.3rem}}
+@media(max-width:22.49rem){.motion-control span{display:none}.motion-control{min-width:36px;justify-content:center}.mast__in{column-gap:.35rem}}
+
 </style>
 </head>
 <body>
 
 <header class="mast">
   <div class="wrap mast__in">
-    <a class="mark" href="index.html"><b data-ja="ネクサス" data-en="NEXUS">넥수스</b><i>NEXUS</i></a>
+    <a class="mark" href="index.html"><b data-ja="ネクサス" data-en="NEXUS">NEXUS</b><i data-ja="NEXUS" data-en="NEXUS">넥수스</i></a>
     <div class="mast__r">
       <nav>
         <a href="index.html#clinic" data-ja="クリニック・ブランド" data-en="For Clinics">클리닉·브랜드</a>
