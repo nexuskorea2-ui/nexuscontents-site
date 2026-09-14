@@ -107,7 +107,7 @@ html[lang="ja"] .mark b{font-family:var(--f-dj)}
 [hidden]{display:none!important}
 .hero__art{aspect-ratio:5/4; background-color:var(--surface-alt);
   background-image:radial-gradient(70% 80% at 65% 40%,var(--accent-2) 0%,transparent 65%),
-    url("seoul.png");
+    url("hero.jpg");
   background-size:cover; background-position:62% 55%}
 @media(min-width:56rem){.hero__art{margin-right:calc(-1 * (50vw - min(50vw, var(--max) / 2) + var(--pad))); aspect-ratio:auto; min-height:32rem}}
 
@@ -213,7 +213,7 @@ main{isolation:isolate}
 html[lang="en"] .hero h1{font-size:clamp(2.5rem,4.1vw,3.6rem);letter-spacing:-.045em;line-height:1.22}
 html[lang="ja"] .hero h1{letter-spacing:-.055em;line-height:1.42}
 .hero__lead{font-size:.95rem;line-height:2;max-width:39ch}
-.hero__art{position:relative;border-radius:50% 50% 2px 2px;min-height:27rem;box-shadow:0 24px 65px color-mix(in srgb,var(--accent) 12%,transparent);background-image:linear-gradient(160deg,transparent 65%,color-mix(in srgb,var(--accent) 25%,transparent)),url("seoul.png");background-position:60% 50%;background-size:cover}
+.hero__art{position:relative;border-radius:50% 50% 2px 2px;min-height:27rem;box-shadow:0 24px 65px color-mix(in srgb,var(--accent) 12%,transparent);background-image:linear-gradient(160deg,transparent 65%,color-mix(in srgb,var(--accent) 25%,transparent)),url("hero.jpg");background-position:60% 50%;background-size:cover}
 .hero__art:before{content:"";position:absolute;inset:1rem;border:1px solid color-mix(in srgb,var(--ground) 65%,transparent);border-radius:inherit;pointer-events:none}
 .hero__art:after{content:"";position:absolute;width:5rem;height:5rem;left:-1.5rem;bottom:2rem;border:1px solid var(--accent);border-radius:50%;background:radial-gradient(circle,var(--accent) 0 5%,transparent 6% 23%,var(--accent) 24% 25%,transparent 26% 48%,var(--accent) 49% 50%,transparent 51%);box-shadow:0 0 0 10px color-mix(in srgb,var(--ground) 70%,transparent);animation:orbit 24s linear infinite}
 .rail{color:var(--accent);font-size:.6rem;letter-spacing:.3em}
@@ -258,7 +258,7 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 
 .guide-entry{display:flex;align-items:center;gap:1.2rem;padding:clamp(1.25rem,3vw,2rem);margin-top:3rem;border:1px solid var(--line);border-radius:8px;background:linear-gradient(120deg,var(--surface),var(--accent-2));text-decoration:none;color:var(--accent);transition:transform .25s,box-shadow .25s}.guide-entry:hover{transform:translateY(-3px);box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 12%,transparent)}.guide-entry__emoji{font-size:2.5rem;line-height:1.3}.guide-entry__copy{display:grid;gap:.4rem;min-width:0;flex:1}.guide-entry strong{font-size:1.2rem;font-weight:500}.guide-entry__copy>span{font-size:.85rem;color:var(--ink-soft)}
 /* Art direction: architecture, objects, and creator tools. */
-.hero{padding-bottom:7rem}.hero__art{background-image:url("seoul.png");background-position:50% 55%;cursor:zoom-in;transition:box-shadow .5s}
+.hero{padding-bottom:7rem}.hero__art{background-image:url("clinic.png");background-position:64% 50%;cursor:zoom-in;transition:box-shadow .5s}
 .hero__art:after{background:var(--ground);border:1px solid var(--accent);width:4rem;height:4rem;animation:none;box-shadow:0 0 0 8px color-mix(in srgb,var(--ground) 70%,transparent)}
 .hero__art:hover{box-shadow:0 30px 90px color-mix(in srgb,var(--accent) 22%,transparent)}
 .art-ribbon{max-width:var(--max);margin:0 auto 3rem;padding:0 var(--pad);display:flex;align-items:center;gap:1.5rem;overflow:hidden;color:var(--accent);font-size:clamp(2.5rem,8vw,6.5rem);font-weight:200;letter-spacing:.14em;line-height:1.3;opacity:.7}
@@ -278,9 +278,9 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 .process-caption .step-number{font-size:clamp(3rem,6vw,5rem);line-height:1;color:var(--accent);font-family:var(--f-d)}.process-caption h3{font-size:1.3rem;font-weight:400;line-height:1.5}.process-caption p{font-size:.8rem;color:var(--muted);margin:0}
 .scope-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:start}.scope-layout>.visual-photo{aspect-ratio:4/5;max-height:38rem}.scope-layout .does{grid-template-columns:minmax(0,1fr)}
 @media(min-width:60rem){.scope-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:3rem}.scope-layout>.visual-photo{position:sticky;top:8rem}.scope-layout .does{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.8rem}.scope-layout .do{padding-left:2rem}}
-.band{position:relative}.band:before{content:"";position:absolute;inset:0;background-image:radial-gradient(ellipse at 85% 20%,var(--deep-line),transparent 60%),repeating-linear-gradient(120deg,transparent 0 70px,color-mix(in srgb,var(--deep-ink) 4%,transparent) 71px 72px);background-size:cover;background-position:center;opacity:.8}.band section{z-index:1}.band:after{width:26rem;height:26rem}
+.band{position:relative}.band:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,var(--deep),color-mix(in srgb,var(--deep) 88%,transparent)),url("filming.png");background-size:cover;background-position:center;opacity:.8}.band section{z-index:1}.band:after{width:26rem;height:26rem}
 .cts a{border-radius:4px}.cts a:after{transition:transform .35s}.cts a:hover:after{transform:translate(3px,-3px)}
-.guide-entry{position:relative;overflow:hidden;padding-block:2.1rem}.guide-entry:before{content:"";position:absolute;inset:0 0 0 60%;background:repeating-linear-gradient(90deg,transparent 0 30px,var(--accent) 30px 32px),linear-gradient(120deg,var(--accent-2),var(--surface));opacity:.18;pointer-events:none}.guide-entry>*{position:relative;z-index:1}.guide-entry__emoji{transition:transform .4s}.guide-entry:hover .guide-entry__emoji{transform:rotate(-10deg) scale(1.12)}
+.guide-entry{position:relative;overflow:hidden;padding-block:2.1rem}.guide-entry:before{content:"";position:absolute;inset:0 0 0 60%;background:linear-gradient(90deg,var(--accent-2),transparent),url("filming.png") center/cover;opacity:.18;pointer-events:none}.guide-entry>*{position:relative;z-index:1}.guide-entry__emoji{transition:transform .4s}.guide-entry:hover .guide-entry__emoji{transform:rotate(-10deg) scale(1.12)}
 .scroll-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
 .mast nav a[aria-current="location"]{color:var(--accent);border-bottom-color:var(--accent)}
 .motion-control{display:flex;align-items:center;gap:.3rem;background:none;border:1px solid var(--line);border-radius:30px;padding:.35rem .55rem;color:var(--muted);font:inherit;font-size:.65rem;cursor:pointer;line-height:1.4}
@@ -326,8 +326,6 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 @media(max-width:22.49rem){.motion-control span{display:none}.motion-control{min-width:36px;justify-content:center}.mast__in{column-gap:.35rem}}
 
 .brand-story{display:grid;grid-template-columns:5rem minmax(0,1fr);gap:1.5rem;padding:2rem;margin-bottom:2rem;background:linear-gradient(120deg,var(--surface),var(--accent-2));border:1px solid var(--line);border-radius:6px}.brand-story__symbol{font-size:4rem;color:var(--accent);line-height:1.1;align-self:center}.brand-story h3{font-size:1.3rem;line-height:1.5;font-weight:400}.brand-story p{font-size:.94rem;line-height:1.95;color:var(--ink-soft);margin:.8rem 0 0}@media(max-width:43.99rem){.brand-story{grid-template-columns:minmax(0,1fr);padding:1.4rem;gap:.7rem}.brand-story__symbol{font-size:3rem}.brand-story p{font-size:.9rem}}
-
-.hero__art{background-position:50% 55%}@media(max-width:43.99rem){.hero__art{background-position:50% 58%}}
 </style>
 </head>
 <body>
@@ -364,7 +362,7 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 
 Creators film in their own style, while we handle the introductions and connections.">넥수스는 서울의 피부과·에스테틱·메이크업숍과 한국을 찾는 일본 크리에이터를 연결합니다. 촬영은 크리에이터가 자신의 방식대로, 소개와 연결은 저희가 맡습니다.</p>
       </div>
-      <div class="hero__art" role="button" tabindex="0" data-zoom="seoul.png" aria-label="Zoom image"></div>
+      <div class="hero__art" role="button" tabindex="0" data-zoom="clinic.png" aria-label="Zoom image"></div>
     </div>
   </div>
 
@@ -421,7 +419,7 @@ For any urgent needs, feel free to contact us.">크리에이터가 직접 방문
 We will verify the PR label and collaboration settings.">시술 후 2주 이내에 릴스와 스토리로 투고하고, PR 표기와 공동게시물 설정을 확인합니다.</p></div>
     </div>
 
-    <div class="process-visual" id="process-visual"><button type="button" class="visual-photo" data-zoom="brief.png" aria-label="Zoom image"><img id="stage-photo" src="brief.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button><div class="process-caption"><span class="step-number" id="stage-number" aria-hidden="true">01</span><h3 id="stage-title" aria-live="polite"></h3><p data-ja="上のステップを選んでご覧ください。" data-en="Select a step above to explore.">위의 진행 단계를 선택해 보세요.</p></div></div>
+    <div class="process-visual" id="process-visual"><button type="button" class="visual-photo" data-zoom="planning.png" aria-label="Zoom image"><img id="stage-photo" src="planning.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button><div class="process-caption"><span class="step-number" id="stage-number" aria-hidden="true">01</span><h3 id="stage-title" aria-live="polite"></h3><p data-ja="上のステップを選んでご覧ください。" data-en="Select a step above to explore.">위의 진행 단계를 선택해 보세요.</p></div></div>
     <!-- Guide video navigation -->
     <a class="guide-entry" id="guide" href="guide.html">
       <span class="guide-entry__emoji" aria-hidden="true">🎬</span>
@@ -599,7 +597,7 @@ var dialog=document.getElementById('art-dialog'),dialogImage=document.getElement
 document.querySelectorAll('[data-zoom]').forEach(function(button){function open(){dialogImage.src=button.dataset.zoom;dialog.showModal();}button.addEventListener('click',open);if(button.tagName!=='BUTTON')button.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
 dialog.addEventListener('click',function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 var nodes=Array.from(document.querySelectorAll('.node')),selected=0,stage=document.getElementById('stage-photo'),stageButton=stage.parentElement,stageTitle=document.getElementById('stage-title'),stageNumber=document.getElementById('stage-number');
-var photos=['brief.png','matching.png','visit.png','publishing.png'];
+var photos=['planning.png','filming.png','clinic.png','planning.png'];
 function choose(i,user){selected=i;nodes.forEach(function(n,j){n.dataset.active=String(i===j);n.setAttribute('aria-pressed',String(i===j));});stage.src=photos[i];stageButton.dataset.zoom=photos[i];stageTitle.textContent=nodes[i].querySelector('h3').textContent;stageNumber.textContent=nodes[i].querySelector('.node__n').textContent;if(user)animate(stage,[{opacity:.4,transform:'scale(1.035)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'ease-out'});}
 nodes.forEach(function(n,i){n.setAttribute('role','button');n.tabIndex=0;n.setAttribute('aria-controls','process-visual');n.addEventListener('click',function(){choose(i,true);});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i,true);}else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var next=(i+(e.key==='ArrowRight'?1:-1)+nodes.length)%nodes.length;nodes[next].focus();choose(next,true);}});});choose(0,false);
 new MutationObserver(function(){choose(selected,false);updateMotion();}).observe(root,{attributes:true,attributeFilter:['lang']});
