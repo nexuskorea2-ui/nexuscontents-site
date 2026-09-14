@@ -267,20 +267,16 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 @media(max-width:22.49rem){.motion-control span{display:none}.motion-control{min-width:36px;justify-content:center}.mast__in{column-gap:.35rem}}
 
 
-/* Mobile guide: edge-to-edge portrait player, without cropping the video. */
+/* A single native player, sized to the source video's portrait ratio. */
+.guide-page .guide__screen{display:block;width:min(100%,32rem,calc(var(--guide-available-height,75vh) * .5625));max-width:100%;height:auto;min-height:0;aspect-ratio:auto;justify-self:center;overflow:visible;border:0;border-radius:0;background:var(--ground)}
+.guide-page .guide__screen::before{display:none}
+.guide-page #guide-player{position:static;width:100%;height:auto}
+.guide-page video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:var(--ground)}
 @media(max-width:43.99rem){
  .guide-page{padding-inline:0}
  .guide-page>.guide__link{margin-inline:var(--pad)}
  .guide-page .guide{padding:0;border:0;border-radius:0;background:none;gap:1rem}
- .guide-page .guide__intro{padding-inline:var(--pad)}
- .guide-page .guide__screen{display:block;width:min(100%, calc(var(--guide-available-height, 75svh) * 9 / 16));max-width:none;height:auto;min-height:0;aspect-ratio:auto;border:0;border-radius:0}
- .guide-page .guide__screen::before{content:"";display:block;padding-top:177.777778%}
- .guide-page #guide-player,.guide-page .guide__screen iframe{position:absolute;inset:0;display:block;width:100%;height:100%;margin:0;border:0}
- .guide-page .guide-help{padding-inline:var(--pad)}
-}
-@media(max-width:43.99rem) and (orientation:landscape){
- .guide-page .guide__screen{width:min(100%, calc(var(--guide-available-height, 75svh) * 16 / 9))}
- .guide-page .guide__screen::before{padding-top:56.25%}
+ .guide-page .guide__intro,.guide-page .guide-help{padding-inline:var(--pad)}
 }
 
 </style>
@@ -361,12 +357,19 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
     guide.hidden = !id;
     if (!id) return;
     document.getElementById("guide-link").href = "https://drive.google.com/file/d/" + id + "/view";
-    var frame = document.createElement("iframe");
-    frame.src = "https://drive.google.com/file/d/" + id + "/preview";
-    frame.title = lang === "ko" ? "한국어 가이드 영상" : lang === "ja" ? "日本語ガイド動画" : "English guide video";
-    frame.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
-    frame.allowFullscreen = true;
-    player.replaceChildren(frame);
+    var previous = player.querySelector("video");
+    if (previous) { previous.pause(); previous.removeAttribute("src"); previous.load(); }
+    var video = document.createElement("video");
+    video.src = "guide-" + lang + ".mp4";
+    video.poster = "guide-" + lang + ".jpg";
+    video.controls = true;
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.preload = "metadata";
+    video.width = 720;
+    video.height = 1280;
+    video.setAttribute("aria-label", lang === "ko" ? "한국어 가이드 영상" : lang === "ja" ? "日本語ガイド動画" : "English guide video");
+    player.replaceChildren(video);
     player.hidden = false;
   }
 
