@@ -266,6 +266,20 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 @media(max-width:43.99rem){html[lang="ko"] .mark b{font-size:1rem;letter-spacing:.08em}html[lang="ko"] .mark i{font-size:.61rem;letter-spacing:0}html[lang="ko"] .mark{gap:.3rem}}
 @media(max-width:22.49rem){.motion-control span{display:none}.motion-control{min-width:36px;justify-content:center}.mast__in{column-gap:.35rem}}
 
+
+/* Mobile guide: edge-to-edge portrait player, without cropping the video. */
+@media(max-width:43.99rem){
+ .guide-page{padding-inline:0}
+ .guide-page>.guide__link{margin-inline:var(--pad)}
+ .guide-page .guide{padding:0;border:0;border-radius:0;background:none;gap:1rem}
+ .guide-page .guide__intro{padding-inline:var(--pad)}
+ .guide-page .guide__screen{width:100%;max-width:none;aspect-ratio:9/16;border:0;border-radius:0}
+ .guide-page .guide-help{padding-inline:var(--pad)}
+}
+@media(max-width:43.99rem) and (orientation:landscape){
+ .guide-page .guide__screen{aspect-ratio:16/9}
+}
+
 </style>
 </head>
 <body>
