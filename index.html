@@ -262,7 +262,7 @@ footer{margin-top:0;padding-block:2rem;border-top-color:var(--line);font-size:.7
 .hero__art:after{background:var(--ground);border:1px solid var(--accent);width:4rem;height:4rem;animation:none;box-shadow:0 0 0 8px color-mix(in srgb,var(--ground) 70%,transparent)}
 .hero__art:hover{box-shadow:0 30px 90px color-mix(in srgb,var(--accent) 22%,transparent)}
 .art-ribbon{max-width:var(--max);margin:0 auto 3rem;padding:0 var(--pad);display:flex;align-items:center;gap:1.5rem;overflow:hidden;color:var(--accent);font-size:clamp(2.5rem,8vw,6.5rem);font-weight:200;letter-spacing:.14em;line-height:1.3;opacity:.7}
-.art-ribbon:before,.art-ribbon:after{content:"";height:1px;background:var(--line-2);flex:1}.art-ribbon i{font-style:normal;font-size:.4em;font-weight:200}
+.art-ribbon:before,.art-ribbon:after{content:"";height:1px;background:var(--line-2);flex:1}.art-ribbon span{margin-right:-.14em}
 .pan{padding-top:1.3rem;transform-style:preserve-3d;transition:transform .35s ease,box-shadow .4s;--px:50%;--py:50%}
 .pan:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--px) var(--py),color-mix(in srgb,var(--surface) 18%,transparent),transparent 48%);opacity:0;transition:opacity .4s;z-index:2}.pan:hover:after{opacity:1}
 .visual-photo{display:block;padding:0;border:0;position:relative;width:100%;overflow:hidden;cursor:zoom-in;background:var(--surface-alt);color:var(--ink);border-radius:3px;isolation:isolate;font:inherit}
@@ -328,6 +328,12 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 .brand-story{display:grid;grid-template-columns:5rem minmax(0,1fr);gap:1.5rem;padding:2rem;margin-bottom:2rem;background:linear-gradient(120deg,var(--surface),var(--accent-2));border:1px solid var(--line);border-radius:6px}.brand-story__symbol{font-size:4rem;color:var(--accent);line-height:1.1;align-self:center}.brand-story h3{font-size:1.3rem;line-height:1.5;font-weight:400}.brand-story p{font-size:.94rem;line-height:1.95;color:var(--ink-soft);margin:.8rem 0 0}@media(max-width:43.99rem){.brand-story{grid-template-columns:minmax(0,1fr);padding:1.4rem;gap:.7rem}.brand-story__symbol{font-size:3rem}.brand-story p{font-size:.9rem}}
 
 .hero__art{background-position:50% 55%}@media(max-width:43.99rem){.hero__art{background-position:50% 58%}}
+/* Headline line breaks: break only where the copy has a newline.
+   Hero type is sized to its column so 「日本で発信しませんか？」 never splits. */
+.hero__in>div{container-type:inline-size}
+html[lang="ja"] .hero h1{max-width:none;font-size:min(clamp(2.7rem,5vw,4.2rem),8.8cqi)}
+@media(max-width:43.99rem){html[lang="ja"] .hero h1{font-size:min(clamp(2.05rem,8.8vw,2.7rem),8.8cqi)}}
+.pan h3{white-space:pre-line}
 </style>
 </head>
 <body>
@@ -369,11 +375,12 @@ Share it with Japan.">서울에서 받은 시술을
     </div>
   </div>
 
-  <div class="art-ribbon" aria-hidden="true">NEXUS <i>✳</i></div>
+  <div class="art-ribbon" aria-hidden="true"><span>NEXUS</span></div>
   <div class="dip">
     <div class="pan pan--l" id="clinic"><button type="button" class="visual-photo" data-zoom="clinic.png" aria-label="Zoom image"><img src="clinic.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>
       <p class="lbl">For Clinics &amp; Brands</p>
-      <h3 data-ja="日本で韓国のクリニックを広める" data-en="Get your clinic known in Japan">일본에 한국 클리닉을 알립니다</h3>
+      <h3 data-ja="日本で韓国の
+クリニックを広める" data-en="Get your clinic known in Japan">일본에 한국 클리닉을 알립니다</h3>
       <p data-ja="実際に韓国に訪問していただき、施術を体験したことを投稿していくスタイルです✨" data-en="Creators come to Korea, have the treatment, and post about it ✨">직접 한국을 방문해 시술을 체험하고, 그 경험을 게시물로 올리는 방식입니다✨</p>
       <ul>
         <li data-ja="投稿ジャンルに合わせて豊富な案件をご用意しております" data-en="A wide range of briefs to match what a creator already posts about">게시물 장르에 맞춰 다양한 안건을 준비하고 있습니다</li>
