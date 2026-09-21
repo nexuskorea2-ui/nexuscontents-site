@@ -50,8 +50,8 @@ DOM에는 **한국어**가 들어 있고, 일본어·영어는 **속성**에 들
 
 - 한 언어를 고칠 때 **다른 언어를 같이 바꾸지 마세요.** 사용자가 명시적으로 요청한
   언어만 수정합니다.
-- 속성값 안에 **줄바꿈 문자를 그대로 넣을 수 있습니다.** `.hero__lead`, `.head p`,
-  `.node p`에 걸린 `white-space:pre-line`이 그 줄바꿈을 화면에 그대로 표시합니다.
+- 속성값 안에 **줄바꿈 문자를 그대로 넣을 수 있습니다.** `.hero h1`, `.hero__lead`, `.head p`,
+  `.node p`, `.pan h3`에 걸린 `white-space:pre-line`이 그 줄바꿈을 화면에 그대로 표시합니다.
   줄바꿈을 쓴다면 그 CSS를 지우지 마세요.
 - `<li>`를 지우면 세 언어 모두에서 사라집니다. 특정 언어에서만 빼려면 `data-en-hide`
   같은 속성을 쓰세요. (실제로 For Creators 목록 3번째 항목이 영어에서만 숨겨져 있습니다.)
@@ -60,16 +60,39 @@ DOM에는 **한국어**가 들어 있고, 일본어·영어는 **속성**에 들
 
 ## 3. 레이아웃 함정 — 이미 겪은 버그들입니다. 되돌리지 마세요
 
-### 3-1. 일본어는 줄바꿈되어야 합니다
-`p,li,dd,dt{word-break:keep-all}`은 한국어에는 맞지만(단어 중간에서 안 끊김),
-일본어는 띄어쓰기가 없어서 문단 전체가 끊기지 않는 하나의 "단어"가 됩니다.
-그러면 Process 4칸 그리드가 터지면서 페이지에 가로 스크롤이 생깁니다.
+### 3-1. 일본어 줄바꿈은 어절(文節) 단위로
+일본어는 띄어쓰기가 없어서, 그냥 두면 「ご投稿く / ださい」처럼 단어 중간에서 끊깁니다.
+반대로 한국어용 `keep-all`만 걸면 문단 전체가 끊기지 않는 한 덩어리가 되어
+Process 그리드가 터지고 가로 스크롤이 생깁니다. 그래서 두 가지를 함께 씁니다.
 
+1. **모든 `data-ja` 값에는 어절 사이마다 `&#8203;`(폭 없는 공백)이 들어 있습니다.**
+   일본어 문구를 고치거나 새로 넣으면 **반드시 다시 넣으세요.** 빠뜨린 문장은 아무 데서나 끊깁니다.
+   도구 `tools/seg_ja.js`(BudouX 사용)가 전부 자동으로 넣어 줍니다. 여러 번 돌려도 결과가 같습니다.
+   ```
+   cd /tmp && npm i budoux
+   NODE_PATH=/tmp/node_modules node <저장소>/tools/seg_ja.js index.html index.html
+   ```
+   도구 안의 `MERGE`/`SPLIT`은 손으로 다듬은 예외입니다 (「体験したことを」는 붙이고,
+   좁은 Process 칸에서 「。」가 혼자 줄에 남지 않도록 「〜て / いただきます。」로 나눔).
+2. CSS는 일본어 블록에만 `keep-all` + `overflow-wrap:anywhere`:
+   ```css
+   html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,
+   html[lang="ja"] p,html[lang="ja"] li,html[lang="ja"] dd,html[lang="ja"] dt{word-break:keep-all;overflow-wrap:anywhere}
+   ```
+   `anywhere`는 어절 하나가 칸보다 길 때만 쓰이는 안전장치입니다. `break-word`로 바꾸거나 지우면
+   좁은 칸에서 가로 스크롤이 다시 생깁니다.
+
+검증 기준: 300~1920px 전 구간에서 가로 넘침 0, 줄 첫머리에 「、。」ー・작은 가나」가 오는 곳 0.
+
+### 3-1b. 일본어 첫 화면 제목은 항상 두 줄
+「ソウルで受けた施術を / 日本で発信しませんか？」는 속성값 안의 줄바꿈으로 두 줄을 고정하고,
+글자 크기를 **글 칼럼 폭에 맞춥니다**:
 ```css
-html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,
-html[lang="ja"] p,html[lang="ja"] li,html[lang="ja"] dd,html[lang="ja"] dt{word-break:normal}
+.hero__in>div{container-type:inline-size}
+html[lang="ja"] .hero h1{max-width:none;font-size:min(clamp(2.7rem,5vw,4.2rem),8.8cqi)}
 ```
-이 규칙을 유지하세요.
+문구를 더 길게 바꾸면 `8.8cqi`를 다시 계산하세요 (가장 긴 줄의 글자 수 × 약 0.95em이 칼럼 폭의
+90% 이하). 예전에는 모바일에서 「日本で発信し / ませんか？」처럼 세 줄로 깨졌습니다.
 
 ### 3-2. 히어로 사진의 오른쪽 여백 계산식
 사진은 화면 오른쪽 끝까지 흘러나가야 합니다. 음수 마진은 **뷰포트 기준**이어야 합니다.

@@ -60,8 +60,9 @@ p,li,dd,dt{word-break:keep-all; overflow-wrap:break-word}
 /* language-specific typography */
 html[lang="ja"] body{font-family:var(--f-bj); line-height:1.9}
 html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3{font-family:var(--f-dj); font-weight:700}
+/* JA: break only between phrases (data-ja carries &#8203; between 文節); anywhere = no-overflow safety net */
 html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,
-html[lang="ja"] p,html[lang="ja"] li,html[lang="ja"] dd,html[lang="ja"] dt{word-break:normal}
+html[lang="ja"] p,html[lang="ja"] li,html[lang="ja"] dd,html[lang="ja"] dt{word-break:keep-all;overflow-wrap:anywhere}
 html[lang="en"] body{word-break:normal}
 html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,
 html[lang="en"] p,html[lang="en"] li,html[lang="en"] dd,html[lang="en"] dt{word-break:normal}
@@ -344,7 +345,7 @@ html[lang="ja"] .hero h1{max-width:none;font-size:min(clamp(2.7rem,5vw,4.2rem),8
     <a class="mark" href="#top"><b data-ja="ネクサス" data-en="NEXUS">NEXUS</b><i data-ja="NEXUS" data-en="NEXUS">넥수스</i></a>
     <div class="mast__r">
       <nav>
-        <a href="#clinic" data-ja="クリニック・ブランド" data-en="For Clinics">클리닉·브랜드</a>
+        <a href="#clinic" data-ja="クリニック・&#8203;ブランド" data-en="For Clinics">클리닉·브랜드</a>
         <a href="#creator" data-ja="クリエイター" data-en="For Creators">크리에이터</a>
         <a href="#company" data-ja="会社情報" data-en="Company">회사 정보</a>
       </nav>
@@ -365,11 +366,11 @@ html[lang="ja"] .hero h1{max-width:none;font-size:min(clamp(2.7rem,5vw,4.2rem),8
       <div class="rail" data-ja="Seoul — Tokyo" data-en="Seoul — Worldwide">Seoul &nbsp;—&nbsp; Tokyo</div>
       <div>
         <p class="lbl lbl--a" data-ja="K-Beauty × Japanese Creators" data-en="K-Beauty × English-Speaking Creators">K-Beauty &times; Japanese Creators</p>
-        <h1 data-ja="ソウルで受けた施術を
-日本で発信しませんか？" data-en="Had a treatment in Seoul?
+        <h1 data-ja="ソウルで&#8203;受けた&#8203;施術を
+日本で&#8203;発信しませんか？" data-en="Had a treatment in Seoul?
 Share it with Japan.">서울에서 받은 시술을
 일본에 알려보지 않으시겠어요?</h1>
-        <p class="hero__lead" data-ja="ネクサスは、ソウルの美容皮膚科・エステ・韓国を訪れる日本のクリエイターさまをお繋ぎします" data-en="NEXUS puts Seoul&#39;s dermatology and aesthetic clinics in touch with creators travelling to Korea.">넥수스는 서울의 미용 피부과·에스테틱과 한국을 찾는 일본 크리에이터님을 연결합니다</p>
+        <p class="hero__lead" data-ja="ネクサスは、&#8203;ソウルの&#8203;美容皮膚科・エステ・韓国を&#8203;訪れる&#8203;日本の&#8203;クリエイターさまを&#8203;お繋ぎします" data-en="NEXUS puts Seoul&#39;s dermatology and aesthetic clinics in touch with creators travelling to Korea.">넥수스는 서울의 미용 피부과·에스테틱과 한국을 찾는 일본 크리에이터님을 연결합니다</p>
       </div>
       <div class="hero__art" role="button" tabindex="0" data-zoom="seoul.png" aria-label="Zoom image"></div>
     </div>
@@ -379,54 +380,54 @@ Share it with Japan.">서울에서 받은 시술을
   <div class="dip">
     <div class="pan pan--l" id="clinic"><button type="button" class="visual-photo" data-zoom="clinic.png" aria-label="Zoom image"><img src="clinic.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>
       <p class="lbl">For Clinics &amp; Brands</p>
-      <h3 data-ja="日本で韓国の
-クリニックを広める" data-en="Get your clinic known in Japan">일본에 한국 클리닉을 알립니다</h3>
-      <p data-ja="実際に韓国に訪問していただき、施術を体験したことを投稿していくスタイルです✨" data-en="Creators come to Korea, have the treatment, and post about it ✨">직접 한국을 방문해 시술을 체험하고, 그 경험을 게시물로 올리는 방식입니다✨</p>
+      <h3 data-ja="日本で&#8203;韓国の
+クリニックを&#8203;広める" data-en="Get your clinic known in Japan">일본에 한국 클리닉을 알립니다</h3>
+      <p data-ja="実際に&#8203;韓国に&#8203;訪問していただき、&#8203;施術を&#8203;体験したことを&#8203;投稿していく&#8203;スタイルです✨" data-en="Creators come to Korea, have the treatment, and post about it ✨">직접 한국을 방문해 시술을 체험하고, 그 경험을 게시물로 올리는 방식입니다✨</p>
       <ul>
-        <li data-ja="投稿ジャンルに合わせて豊富な案件をご用意しております" data-en="A wide range of briefs to match what a creator already posts about">게시물 장르에 맞춰 다양한 안건을 준비하고 있습니다</li>
-        <li data-ja="日本人視点でのリアルなレビューでご投稿ください" data-en="Real reviews, written from a Japanese customer&#39;s point of view">일본인 시점의 리얼한 후기로 올려 주세요</li>
+        <li data-ja="投稿ジャンルに&#8203;合わせて&#8203;豊富な&#8203;案件を&#8203;ご用意しております" data-en="A wide range of briefs to match what a creator already posts about">게시물 장르에 맞춰 다양한 안건을 준비하고 있습니다</li>
+        <li data-ja="日本人視点での&#8203;リアルな&#8203;レビューで&#8203;ご投稿ください" data-en="Real reviews, written from a Japanese customer&#39;s point of view">일본인 시점의 리얼한 후기로 올려 주세요</li>
       </ul>
-      <a class="pan__go" href="#company" data-ja="お問い合わせ先を見る →" data-en="See contact details →">문의처 보기 &rarr;</a>
+      <a class="pan__go" href="#company" data-ja="お問い合わせ先を&#8203;見る&#8203; →" data-en="See contact details →">문의처 보기 &rarr;</a>
     </div>
     <div class="pan pan--r" id="creator"><button type="button" class="visual-photo" data-zoom="filming.png" aria-label="Zoom image"><img src="filming.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button>
       <p class="lbl">For Creators</p>
-      <h3 data-ja="渡韓美容の案件をご紹介" data-en="Beauty briefs for your trip to Korea">한국 방문 뷰티 안건을 소개합니다</h3>
-      <p data-ja="ソウルの美容皮膚科・スパ・メイクショップの案件情報をお届けします。" data-en="Briefs from dermatology clinics, spas and makeup studios in Seoul.">서울의 피부과·스파·메이크업숍 안건 정보를 전해드립니다.</p>
+      <h3 data-ja="渡韓美容の&#8203;案件を&#8203;ご紹介" data-en="Beauty briefs for your trip to Korea">한국 방문 뷰티 안건을 소개합니다</h3>
+      <p data-ja="ソウルの&#8203;美容皮膚科・スパ・メイクショップの&#8203;案件情報を&#8203;お届けします。" data-en="Briefs from dermatology clinics, spas and makeup studios in Seoul.">서울의 피부과·스파·메이크업숍 안건 정보를 전해드립니다.</p>
       <ul>
-        <li data-ja="普段の発信スタイルのままで、PRぽさを出さずに自然にご紹介ください" data-en="Post the way you always do — nothing that reads like an ad">평소 발신 스타일 그대로, 광고 느낌 없이 자연스럽게 소개해 주세요</li>
-        <li data-ja="スマホ1台でOK✨" data-en="Your phone is all you need ✨">스마트폰 한 대면 충분합니다✨</li>
-        <li data-ja="実際に体験されたリアルなご感想を発信ください" data-en="Tell people what you actually thought">실제로 체험하신 솔직한 후기를 올려 주세요</li>
+        <li data-ja="普段の&#8203;発信スタイルの&#8203;ままで、&#8203;PRぽさを&#8203;出さずに&#8203;自然に&#8203;ご紹介ください" data-en="Post the way you always do — nothing that reads like an ad">평소 발신 스타일 그대로, 광고 느낌 없이 자연스럽게 소개해 주세요</li>
+        <li data-ja="スマホ1台で&#8203;OK✨" data-en="Your phone is all you need ✨">스마트폰 한 대면 충분합니다✨</li>
+        <li data-ja="実際に&#8203;体験された&#8203;リアルな&#8203;ご感想を&#8203;発信ください" data-en="Tell people what you actually thought">실제로 체험하신 솔직한 후기를 올려 주세요</li>
       </ul>
-      <a class="pan__go" href="https://lin.ee/sxh9Aqg" data-en-href="https://www.instagram.com/nexus_japan2/" data-ja="LINEで案件を受け取る →" data-en="Get briefs — message us on Instagram →">LINE으로 안건 받기 &rarr;</a>
+      <a class="pan__go" href="https://lin.ee/sxh9Aqg" data-en-href="https://www.instagram.com/nexus_japan2/" data-ja="LINEで&#8203;案件を&#8203;受け取る&#8203; →" data-en="Get briefs — message us on Instagram →">LINE으로 안건 받기 &rarr;</a>
     </div>
   </div>
 
   <section class="wrap">
     <div class="head">
       <p class="lbl">Process</p>
-      <h2 data-ja="韓国訪問から投稿まで" data-en="From landing in Seoul to posting">한국 방문에서 게시까지</h2>
-      <p data-ja="ネクサスはクリエイターさまとクリニックをお繋ぎし、撮影と編集はクリエイター様ご本人が行います" data-en="NEXUS introduces the creator and the clinic. Filming and editing stay with the creator.">넥수스는 크리에이터님과 클리닉을 연결하고, 촬영과 편집은 크리에이터 본인이 진행합니다</p>
+      <h2 data-ja="韓国訪問から&#8203;投稿まで" data-en="From landing in Seoul to posting">한국 방문에서 게시까지</h2>
+      <p data-ja="ネクサスは&#8203;クリエイターさまと&#8203;クリニックを&#8203;お繋ぎし、&#8203;撮影と&#8203;編集は&#8203;クリエイター様ご本人が&#8203;行います" data-en="NEXUS introduces the creator and the clinic. Filming and editing stay with the creator.">넥수스는 크리에이터님과 클리닉을 연결하고, 촬영과 편집은 크리에이터 본인이 진행합니다</p>
     </div>
     <div class="flow">
       <div class="node"><span class="node__n">01</span>
-        <h3 data-ja="案件の整理" data-en="Setting up the brief">안건 정리</h3>
-        <p data-ja="施術内容や期間、撮影時の注意事項、提供条件を確定し、皆様に案件をお送りします" data-en="We settle the treatment, the dates, what you can film and what's provided, then send the brief over.">시술 내용과 기간, 촬영 시 주의사항, 제공 조건을 확정해 안건을 보내드립니다</p></div>
+        <h3 data-ja="案件の&#8203;整理" data-en="Setting up the brief">안건 정리</h3>
+        <p data-ja="施術内容や&#8203;期間、&#8203;撮影時の&#8203;注意事項、&#8203;提供条件を&#8203;確定し、&#8203;皆様に&#8203;案件を&#8203;お送りします" data-en="We settle the treatment, the dates, what you can film and what's provided, then send the brief over.">시술 내용과 기간, 촬영 시 주의사항, 제공 조건을 확정해 안건을 보내드립니다</p></div>
       <div class="node"><span class="node__n">02</span>
-        <h3 data-ja="クリエイターのマッチング" data-en="Finding the right creator">크리에이터 매칭</h3>
-        <p data-ja="渡韓日程とコンテンツ分野が合うクリエイター様に案件をご案内し、条件がマッチングされた方をお繋ぎします。" data-en="We take the brief to creators whose travel dates and subject fit, and introduce the ones it works out with.">방한 일정과 콘텐츠 분야가 맞는 크리에이터님께 안건을 안내하고, 조건이 맞는 분을 연결해 드립니다.</p></div>
+        <h3 data-ja="クリエイターの&#8203;マッチング" data-en="Finding the right creator">크리에이터 매칭</h3>
+        <p data-ja="渡韓日程と&#8203;コンテンツ分野が&#8203;合う&#8203;クリエイター様に&#8203;案件を&#8203;ご案内し、&#8203;条件が&#8203;マッチングされた&#8203;方を&#8203;お繋ぎします。" data-en="We take the brief to creators whose travel dates and subject fit, and introduce the ones it works out with.">방한 일정과 콘텐츠 분야가 맞는 크리에이터님께 안건을 안내하고, 조건이 맞는 분을 연결해 드립니다.</p></div>
       <div class="node"><span class="node__n">03</span>
         <h3 data-ja="来店・施術" data-en="The visit">방문 · 시술</h3>
-        <p data-ja="クリエイター様がクリニックを直接訪問し、施術を受けていただきます。" data-en="The creator goes to the clinic and has the treatment.">크리에이터님이 클리닉을 직접 방문해 시술을 받습니다.</p></div>
+        <p data-ja="クリエイター様が&#8203;クリニックを&#8203;直接訪問し、&#8203;施術を&#8203;受けて&#8203;いただきます。" data-en="The creator goes to the clinic and has the treatment.">크리에이터님이 클리닉을 직접 방문해 시술을 받습니다.</p></div>
       <div class="node"><span class="node__n">04</span>
         <h3 data-ja="投稿・確認" data-en="Posting">게시 · 확인</h3>
-        <p data-ja="訪問からおおよそ2週間以内にPR動画を投稿していただきます。" data-en="The PR video goes up within about two weeks of the visit.">방문 후 약 2주 이내에 PR 영상을 올려 주세요.</p></div>
+        <p data-ja="訪問から&#8203;おおよそ2週間以内に&#8203;PR動画を&#8203;投稿して&#8203;いただきます。" data-en="The PR video goes up within about two weeks of the visit.">방문 후 약 2주 이내에 PR 영상을 올려 주세요.</p></div>
     </div>
 
-    <div class="process-visual" id="process-visual"><button type="button" class="visual-photo" data-zoom="brief.png" aria-label="Zoom image"><img id="stage-photo" src="brief.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button><div class="process-caption"><span class="step-number" id="stage-number" aria-hidden="true">01</span><h3 id="stage-title" aria-live="polite"></h3><p data-ja="上のステップを選んでご覧ください。" data-en="Select a step above to explore.">위의 진행 단계를 선택해 보세요.</p></div></div>
+    <div class="process-visual" id="process-visual"><button type="button" class="visual-photo" data-zoom="brief.png" aria-label="Zoom image"><img id="stage-photo" src="brief.png" alt="" loading="lazy" width="1536" height="1024"><span aria-hidden="true">＋</span></button><div class="process-caption"><span class="step-number" id="stage-number" aria-hidden="true">01</span><h3 id="stage-title" aria-live="polite"></h3><p data-ja="上の&#8203;ステップを&#8203;選んで&#8203;ご覧ください。" data-en="Select a step above to explore.">위의 진행 단계를 선택해 보세요.</p></div></div>
     <!-- Guide video navigation -->
     <a class="guide-entry" id="guide" href="guide.html">
       <span class="guide-entry__emoji" aria-hidden="true">🎬</span>
-      <span class="guide-entry__copy"><strong data-ja="動画ガイド" data-en="Video guide">가이드 영상</strong><span data-ja="動画ガイドを見る" data-en="Watch the guide">가이드 영상 보러 가기</span></span>
+      <span class="guide-entry__copy"><strong data-ja="動画ガイド" data-en="Video guide">가이드 영상</strong><span data-ja="動画ガイドを&#8203;見る" data-en="Watch the guide">가이드 영상 보러 가기</span></span>
       <span aria-hidden="true">↗</span>
     </a>
   </section>
@@ -436,31 +437,31 @@ Share it with Japan.">서울에서 받은 시술을
     <section class="wrap">
       <div class="head">
         <p class="lbl">Terms</p>
-        <h2 data-ja="投稿する上での条件" data-en="What we ask when you post">게시 시 지켜주실 조건</h2>
+        <h2 data-ja="投稿する&#8203;上での&#8203;条件" data-en="What we ask when you post">게시 시 지켜주실 조건</h2>
       </div>
       <div class="tg">
         <div>
           <ul>
-            <li data-ja="Instagram でリール1本投稿必須" data-en="One Instagram Reel, required">인스타그램 릴스 1개 게시 필수</li>
-            <li data-ja="施術からおおよそ2週間以内のご投稿をお願いします" data-en="Posted within about two weeks of the treatment">시술 후 약 2주 이내에 게시해 주세요</li>
-            <li data-ja="タイアップ投稿ラベルの設定と #PR の記載" data-en="Paid partnership label on, and #PR in the caption">타이업 게시물 라벨 설정과 #PR 표기</li>
-            <li data-ja="編集はいつものスタイルでOK" data-en="Edit it however you normally would">편집은 평소 스타일대로 하셔도 됩니다</li>
+            <li data-ja="Instagram で&#8203;リール1本投稿必須" data-en="One Instagram Reel, required">인스타그램 릴스 1개 게시 필수</li>
+            <li data-ja="施術から&#8203;おおよそ2週間以内の&#8203;ご投稿を&#8203;お願いします" data-en="Posted within about two weeks of the treatment">시술 후 약 2주 이내에 게시해 주세요</li>
+            <li data-ja="タイアップ投稿ラベルの&#8203;設定と&#8203; #PR の&#8203;記載" data-en="Paid partnership label on, and #PR in the caption">타이업 게시물 라벨 설정과 #PR 표기</li>
+            <li data-ja="編集は&#8203;いつもの&#8203;スタイルで&#8203;OK" data-en="Edit it however you normally would">편집은 평소 스타일대로 하셔도 됩니다</li>
           </ul>
         </div>
       </div>
-      <p class="pr" data-ja="PR表記は景品表示法（2023年10月施行のステルスマーケティング規制）上の義務です。表記がない場合、処分の対象となるのは広告主・仲介者側です。弊社では例外を設けておりません。" data-en="Disclosure is required by advertising regulators in most markets — the FTC's Endorsement Guides in the US, the ASA's CAP Code in the UK, and their equivalents elsewhere. The advertiser and the intermediary carry that responsibility, so we make no exceptions.">PR 표기는 일본 경품표시법(2023년 10월 시행 스텔스마케팅 규제)상의 의무입니다. 표기가 없으면 처분 대상은 광고주·중개자 측입니다. 저희는 예외를 두지 않습니다.</p>
+      <p class="pr" data-ja="PR表記は&#8203;景品表示法&#8203;（2023年10月施行の&#8203;ステルスマーケティング規制）&#8203;上の&#8203;義務です。&#8203;表記が&#8203;ない&#8203;場合、&#8203;処分の&#8203;対象と&#8203;なるのは&#8203;広告主・仲介者側です。&#8203;弊社では&#8203;例外を&#8203;設けて&#8203;おりません。" data-en="Disclosure is required by advertising regulators in most markets — the FTC's Endorsement Guides in the US, the ASA's CAP Code in the UK, and their equivalents elsewhere. The advertiser and the intermediary carry that responsibility, so we make no exceptions.">PR 표기는 일본 경품표시법(2023년 10월 시행 스텔스마케팅 규제)상의 의무입니다. 표기가 없으면 처분 대상은 광고주·중개자 측입니다. 저희는 예외를 두지 않습니다.</p>
     </section>
   </div>
 
   <section class="wrap" id="company">
     <div class="head">
       <p class="lbl">Company</p>
-      <h2 data-ja="ネクサスについて" data-en="About NEXUS">넥수스에 대하여</h2>
+      <h2 data-ja="ネクサスに&#8203;ついて" data-en="About NEXUS">넥수스에 대하여</h2>
     </div>
     <div class="brand-story">
       <span class="brand-story__symbol" aria-hidden="true">∞</span>
-      <div><h3 data-ja="名前に込めた、つながりへの想い" data-en="The connection behind our name">이름에 담은 연결의 의미</h3>
-      <p data-ja="ネクサス（NEXUS）は、ラテン語で「つながり・結びつき」を意味します。私たちは、ソウルの美容クリニックやサロンと、韓国を訪れるクリエイターをつなぎ、それぞれに合った出会いをご紹介します。言葉や文化の違いを橋渡しし、訪問や体験が率直なコンテンツにつながるよう、ご紹介とコミュニケーションをサポートします。" data-en="NEXUS is Latin for a connection or bond. We connect beauty clinics and studios in Seoul with creators visiting Korea, introducing partners whose needs and interests align. By bridging languages and cultures, we support the introductions and communication that help visits and experiences become authentic content.">넥수스(NEXUS)는 라틴어로 ‘연결·결합’을 뜻합니다. 우리는 서울의 뷰티 공간과 한국을 찾는 크리에이터 사이에서, 서로에게 맞는 만남을 연결합니다. 서로 다른 언어와 문화 사이를 잇고, 방문과 체험이 진솔한 콘텐츠로 이어지도록 소개와 소통을 돕습니다.</p></div>
+      <div><h3 data-ja="名前に&#8203;込めた、&#8203;つながりへの&#8203;想い" data-en="The connection behind our name">이름에 담은 연결의 의미</h3>
+      <p data-ja="ネクサス（NEXUS）は、&#8203;ラテン語で&#8203;「つながり・&#8203;結び&#8203;つき」を&#8203;意味します。&#8203;私たちは、&#8203;ソウルの&#8203;美容クリニックや&#8203;サロンと、&#8203;韓国を&#8203;訪れる&#8203;クリエイターを&#8203;つなぎ、&#8203;それぞれに&#8203;合った&#8203;出会いを&#8203;ご紹介します。&#8203;言葉や&#8203;文化の&#8203;違いを&#8203;橋渡しし、&#8203;訪問や&#8203;体験が&#8203;率直な&#8203;コンテンツに&#8203;つながるよう、&#8203;ご紹介と&#8203;コミュニケーションを&#8203;サポートします。" data-en="NEXUS is Latin for a connection or bond. We connect beauty clinics and studios in Seoul with creators visiting Korea, introducing partners whose needs and interests align. By bridging languages and cultures, we support the introductions and communication that help visits and experiences become authentic content.">넥수스(NEXUS)는 라틴어로 ‘연결·결합’을 뜻합니다. 우리는 서울의 뷰티 공간과 한국을 찾는 크리에이터 사이에서, 서로에게 맞는 만남을 연결합니다. 서로 다른 언어와 문화 사이를 잇고, 방문과 체험이 진솔한 콘텐츠로 이어지도록 소개와 소통을 돕습니다.</p></div>
     </div>
     <div class="rec">
       <dl>
@@ -484,7 +485,7 @@ Share it with Japan.">서울에서 받은 시술을
 </footer>
 
 <nav class="mobile-actions" aria-label="Quick links"><a class="mobile-guide" href="guide.html"><span aria-hidden="true">🎬</span><span data-ja="動画ガイド" data-en="Video guide">가이드 영상</span></a><a href="#company"><span data-ja="お問い合わせ" data-en="Contact">문의하기</span><span aria-hidden="true">↗</span></a></nav>
-<dialog class="art-dialog" id="art-dialog" aria-label="Image preview"><form method="dialog"><button data-ja="閉じる ✕" data-en="Close ✕">닫기 ✕</button></form><img id="art-expanded" alt=""><p data-ja="ブランドのイメージを表現したAI生成画像です。" data-en="AI-generated imagery illustrating the brand concept.">브랜드의 분위기를 표현한 AI 제작 이미지입니다.</p></dialog>
+<dialog class="art-dialog" id="art-dialog" aria-label="Image preview"><form method="dialog"><button data-ja="閉じる&#8203; ✕" data-en="Close ✕">닫기 ✕</button></form><img id="art-expanded" alt=""><p data-ja="ブランドの&#8203;イメージを&#8203;表現した&#8203;AI生成画像です。" data-en="AI-generated imagery illustrating the brand concept.">브랜드의 분위기를 표현한 AI 제작 이미지입니다.</p></dialog>
 <script>
 (function () {
   var KO = new Map();
