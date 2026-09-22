@@ -343,6 +343,9 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
   var HIDE = [].slice.call(document.querySelectorAll("[data-ko-hide],[data-ja-hide],[data-en-hide]"));
 
 
+  // "Watch in a new window": Google Drive copies, except JA, which points at the file
+  // we host — the Drive copy is the previous version of the Japanese film.
+  var guideLinks = { ja: "guide-ja.mp4" };
   var guideVideos = {
     ja: "1tevolRdJkwXoaSK5Q4IuRuCoJPBYcryU",
     ko: "1NC2APF3DWfEo6LW1UdfrIOLG1PnEQNRu",
@@ -356,7 +359,7 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
     var id = guideVideos[lang];
     guide.hidden = !id;
     if (!id) return;
-    document.getElementById("guide-link").href = "https://drive.google.com/file/d/" + id + "/view";
+    document.getElementById("guide-link").href = guideLinks[lang] || ("https://drive.google.com/file/d/" + id + "/view");
     var previous = player.querySelector("video");
     if (previous) { previous.pause(); previous.removeAttribute("src"); previous.load(); }
     var video = document.createElement("video");
