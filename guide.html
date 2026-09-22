@@ -343,9 +343,9 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
   var HIDE = [].slice.call(document.querySelectorAll("[data-ko-hide],[data-ja-hide],[data-en-hide]"));
 
 
-  // "Watch in a new window": Google Drive copies, except JA, which points at the file
-  // we host — the Drive copy is the previous version of the Japanese film.
-  var guideLinks = { ja: "guide-ja.mp4" };
+  // "Watch in a new window": the films we host. The Drive copies below are the
+  // previous versions and are no longer linked.
+  var guideLinks = { ko: "guide-ko.mp4", ja: "guide-ja.mp4", en: "guide-en.mp4" };
   var guideVideos = {
     ja: "1tevolRdJkwXoaSK5Q4IuRuCoJPBYcryU",
     ko: "1NC2APF3DWfEo6LW1UdfrIOLG1PnEQNRu",
