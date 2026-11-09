@@ -335,6 +335,8 @@ html[lang="ko"] .mark{gap:.5rem;align-items:baseline;white-space:nowrap}html[lan
 html[lang="ja"] .hero h1{max-width:none;font-size:min(clamp(2.7rem,5vw,4.2rem),8.8cqi)}
 @media(max-width:43.99rem){html[lang="ja"] .hero h1{font-size:min(clamp(2.05rem,8.8vw,2.7rem),8.8cqi)}}
 .pan h3,.brand-story p{white-space:pre-line}
+/* Long email address: wrap only after "@" (a <wbr> sits there), never mid-word */
+.cts a[href^="mailto:"] strong{word-break:normal;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -479,7 +481,7 @@ By bridging language and culture, we help with the introductions and ongoing com
       </dl>
     </div>
     <div class="cts">
-      <a href="mailto:nexuskorea2@gmail.com"><span>Email</span><strong>nexuskorea2@gmail.com</strong></a>
+      <a href="mailto:rladusgur112233@nexuscontents.com"><span>Email</span><strong>rladusgur112233@<wbr>nexuscontents.com</strong></a>
       <a href="https://lin.ee/sxh9Aqg"><span data-ja="LINE 公式アカウント" data-en="LINE Official">LINE 공식계정</span><strong>@889twdmo</strong></a>
       <a href="https://www.instagram.com/nexus_japan2/"><span>Instagram</span><strong>@nexus_japan2</strong></a>
     </div>

@@ -145,7 +145,7 @@ main 에 푸시  →  GitHub Pages 자동 재빌드  →  1~2분 뒤 반영
 - 상호: 넥수스 (NEXUS) / ネクサス
 - 대표자: 김연혁 (Kim Yeonhyuk)
 - 소재지: 경기도 수원시 권선구 정조로470번길 8-2, 1층 101호
-- 이메일: nexuskorea2@gmail.com
+- 이메일: rladusgur112233@nexuscontents.com (회사 메일, 2026-11-09 변경 — 이전 nexuskorea2@gmail.com)
 - LINE 공식계정: @889twdmo — https://lin.ee/sxh9Aqg (한국어·일본어 CTA)
 - Instagram: @nexus_japan2 (영어 크리에이터 CTA는 여기로 연결)
 
